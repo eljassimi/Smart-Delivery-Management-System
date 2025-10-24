@@ -1,7 +1,9 @@
 package com.smartlogi.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.List;
 
 @Entity
@@ -69,6 +71,8 @@ public class Livreur {
     @Column(nullable = false, unique = true)
     private String telephone;
     @OneToMany(mappedBy = "livreur", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JsonManagedReference
     private List<Colis> colis;
 
     public Livreur(){}

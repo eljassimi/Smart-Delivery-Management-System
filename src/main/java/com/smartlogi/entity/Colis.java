@@ -2,6 +2,7 @@ package com.smartlogi.entity;
 
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 
 @Entity
@@ -23,6 +24,7 @@ public class Colis {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "livreur_id")
+    @JsonBackReference
     private Livreur livreur;
 
     public Colis() {}

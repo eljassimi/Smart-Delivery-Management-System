@@ -16,6 +16,8 @@ public class LivreurService {
         this.livreurRepository = livreurRepository;
     }
 
+
+
     @Transactional
     public Livreur creerLivreur(Livreur livreur) {
         if (livreurRepository.existsByTelephone(livreur.getTelephone())) {
